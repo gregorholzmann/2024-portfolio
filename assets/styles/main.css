@@ -77,6 +77,7 @@ aside:first-child {
 }
 /* Header */
 header {
+  height: 70vh;
   background: linear-gradient(
       to right,
       rgba(255, 255, 255, 100%) 0%,
@@ -118,9 +119,7 @@ header section {
   stroke-dashoffset: 200;
   animation: draw 1s ease 1s forwards;
 }
-header aside {
-  align-content: center;
-}
+
 
 /* Sections */
 section,
@@ -179,7 +178,7 @@ footer {
 }
 
 /* Media Queries */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   h1 {
     font-size: 55px;
     font-family: var(--headline-type);
@@ -198,7 +197,9 @@ footer {
   header section p {
     font-size: 24px;
   }
-  
+  header aside {
+    align-content: center;
+  }
   aside {
     flex: 0 0 calc(50% - 1.5rem);
     margin-bottom: 0;
