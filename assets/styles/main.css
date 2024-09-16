@@ -32,13 +32,14 @@
   --body-type: "Din Next", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
 }
-html,
+html {
+  height: 100%;
+}
 body {
   background-color: white;
   color: black;
   font-family: var(--body-type);
   text-align: left;
-  font-size: 18px;
   line-height: normal;
 }
 main {
@@ -47,18 +48,19 @@ main {
 }
 p {
   margin-bottom: 20px;
+  font-size: 16px;
 }
 h1 {
-  font-size: 55px;
+  font-size: 20px;
   font-family: var(--headline-type);
 }
 h2 {
   font-family: var(--headline-type);
-  font-size: 24px;
+  font-size: 18px;
 }
 h4 {
   font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
 }
 aside .work-example {
   max-width: 100%;
@@ -69,7 +71,9 @@ a {
 }
 aside {
   flex: 0 0 100%;
-  margin-bottom: 60px;
+}
+aside:first-child {
+  margin-bottom: 30px;
 }
 /* Header */
 header {
@@ -92,9 +96,6 @@ header section {
 header section h1,
 header section p {
   text-shadow: 2px 2px var(--white);
-}
-header section p {
-  font-size: 24px;
 }
 header section {
   font-family: var(--headline-type);
@@ -124,7 +125,7 @@ header aside {
 /* Sections */
 section,
 footer {
-  padding: 80px;
+  padding: 50px;
   margin: 0 auto;
   max-width: 1400px;
   display: flex;
@@ -137,12 +138,11 @@ section .logos {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
   margin-top: 25px;
 }
 
 section .logos div {
-  flex: 0 0 32%;
+  flex: 0 0 100%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -150,6 +150,7 @@ section .logos div {
 
 section .logos div img {
   width: 350px;
+  max-width: 100%;
 }
 section .logos div .round-logo {
   width: 200px;
@@ -157,6 +158,7 @@ section .logos div .round-logo {
 
 section .company-logo {
   height: 80px;
+  max-width: 100%;;
   margin-bottom: 15px;
 }
 
@@ -168,9 +170,6 @@ section .company-logo {
 .section-container.quote {
   background-color: var(--mint);
 }
-.section-container.quote section {
-  padding: 60px 140px;
-}
 
 /* Footer */
 footer {
@@ -181,9 +180,25 @@ footer {
 
 /* Media Queries */
 @media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 55px;
+    font-family: var(--headline-type);
+  }
+  h2 {
+    font-family: var(--headline-type);
+    font-size: 24px;
+  }
+  h4 {
+    font-style: italic;
+    font-size: 14px;
+  }
   header {
     height: 60vh;
   }
+  header section p {
+    font-size: 24px;
+  }
+  
   aside {
     flex: 0 0 calc(50% - 1.5rem);
     margin-bottom: 0;
@@ -197,6 +212,16 @@ footer {
   section {
     flex-direction: row;
   }
+  .section-container.quote section {
+    padding: 60px 140px;
+  }
+  section .logos {
+    gap: 10px;
+  }
+  section .logos div {
+    flex: 0 0 32%;
+  }
+  
 }
 
 /* Animations */
